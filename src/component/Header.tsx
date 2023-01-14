@@ -77,10 +77,10 @@ const Header = () => {
       </div>
       <section className="min-h-screen shadow-md absolute bg-black text-[#818181] mt-[4rem]">
         {toggle && (
-          <div className="relative flex flex-col justify-center items-center gap-2 w-[15rem] mt-5">
+          <div className="relative flex flex-col justify-start items-start gap-2 w-[15rem] mt-5">
             <button
               disabled={settings.algoType == disable ? true : false}
-              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 w-full text-center ${
+              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-10 w-full text-start ${
                 settings.algoType == "bubble sort"
                   ? " !text-[#afafaf] bg-[#818181]"
                   : ""
@@ -94,7 +94,7 @@ const Header = () => {
             </button>
             <button
               disabled={settings.algoType == disable ? true : false}
-              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 w-full text-center ${
+              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-10 w-full text-start ${
                 settings.algoType == "insertion sort"
                   ? "!text-[#afafaf] bg-[#818181]"
                   : ""
@@ -109,7 +109,7 @@ const Header = () => {
 
             <button
               disabled={settings.algoType == disable ? true : false}
-              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 w-full text-center ${
+              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-10 w-full text-start ${
                 settings.algoType == "merge sort"
                   ? " !text-[#afafaf] bg-[#818181]"
                   : ""
@@ -123,7 +123,7 @@ const Header = () => {
             </button>
             <button
               disabled={settings.algoType == disable ? true : false}
-              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 w-full text-center ${
+              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-10 w-full text-start ${
                 settings.algoType == "quick sort"
                   ? " !text-[#afafaf] bg-[#818181]"
                   : ""
@@ -137,7 +137,7 @@ const Header = () => {
             </button>
             <button
               disabled={settings.algoType == disable ? true : false}
-              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 w-full text-center ${
+              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-10 w-full text-start ${
                 settings.algoType == "heap sort"
                   ? " !text-[#afafaf] bg-[#818181]"
                   : ""
@@ -153,7 +153,7 @@ const Header = () => {
         )}
       </section>
       <div className="container flex justify-between items-center min-w-max">
-        <h1 className="text-white text-4xl font-light capitalize">
+        <h1 className="text-white text-4xl font-light capitalize ">
           {settings.algoType}
         </h1>
         <div className="flex justify-center items-center gap-8">

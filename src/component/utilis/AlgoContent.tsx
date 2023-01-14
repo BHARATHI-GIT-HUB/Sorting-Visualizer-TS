@@ -60,55 +60,61 @@ const AlgoContent: React.FC<Props> = ({ AlgoType }) => {
   }, [AlgoType]);
 
   return (
-    <div className="min-w-screen min-h-screen flex justify-between items-start mt-5 bg-black text-white p-10">
+    <div className="min-w-screen min-h-max flex justify-between items-start mt-5 bg-black text-white p-10">
       <div className="flex flex-col gap-4">
-        <h1 className="text-4xl font-Jura font-bold">Description</h1>
+        <h1 className="text-4xl font-Jura font-bold text-[#d17f3f]">
+          Description
+        </h1>
         <p className="text-xl font-Inter font-normal max-w-4xl">
           <div
             dangerouslySetInnerHTML={{
               __html: AlgoContent.description,
             }}
           />
-          {/* {AlgoContent.description} */}
         </p>
       </div>
       <div className="flex flex-col justify-start items-start gap-4">
-        <h1 className="text-4xl font-Jura font-bold">Complexity</h1>
-        <ul className="flex flex-col justify-start items-start gap-2">
-          <li className="text-xl font-Inter font-normal flex gap-2">
-            Worst-case time complexity
-            <div
+        <h1 className="text-4xl font-Jura font-bold text-[#d17f3f]">
+          Complexity
+        </h1>
+        <div className="flex justify-center items-start gap-4">
+          <ul className="flex flex-col justify-start items-start gap-2">
+            <li className="text-xl font-Inter font-normal">
+              Worst-case time complexity
+            </li>
+            <li className="text-xl font-Inter font-normal">
+              Average time complexity
+            </li>
+            <li className="text-xl font-Inter font-normal">
+              Best-case time complexity
+            </li>
+            <li className="text-xl font-Inter font-normal">
+              Worst-case space complexity
+            </li>
+          </ul>
+          <ul className="text-xl font-Inter font-normal flex flex-col gap-2">
+            <li
               dangerouslySetInnerHTML={{
                 __html: AlgoContent.worstCase,
               }}
-            />
-            {/* <span>stringToHTML(str(AlgoContent.worstCase))</span> */}
-          </li>
-          <li className="text-xl font-Inter font-normal flex gap-2">
-            Average time complexity
-            <div
+            />{" "}
+            <li
               dangerouslySetInnerHTML={{
                 __html: AlgoContent.avgCase,
               }}
-            />
-          </li>
-          <li className="text-xl font-Inter font-normal flex gap-2">
-            Best-case time complexity
-            <div
+            />{" "}
+            <li
               dangerouslySetInnerHTML={{
                 __html: AlgoContent.bestCase,
               }}
-            />
-          </li>
-          <li className="text-xl font-Inter font-normal flex gap-2">
-            Worst-case space complexity
-            <div
+            />{" "}
+            <li
               dangerouslySetInnerHTML={{
                 __html: AlgoContent.worstCaseSpc,
               }}
             />
-          </li>
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
   );
