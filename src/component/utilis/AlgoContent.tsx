@@ -65,15 +65,14 @@ const AlgoContent: React.FC<Props> = ({ AlgoType }) => {
         <h1 className="text-4xl font-Jura font-bold text-[#d17f3f]">
           Description
         </h1>
-        <p className="text-xl font-Inter font-normal max-w-4xl">
-          <div
-            dangerouslySetInnerHTML={{
-              __html: AlgoContent.description,
-            }}
-          />
-        </p>
+        <p
+          className="text-xl font-Inter font-normal max-w-4xl capitalize"
+          dangerouslySetInnerHTML={{
+            __html: AlgoContent.description,
+          }}
+        />
       </div>
-      <div className="flex flex-col justify-start items-start gap-4">
+      <div className="flex flex-col justify-start items-start gap-4 min-w-[20rem]">
         <h1 className="text-4xl font-Jura font-bold text-[#d17f3f]">
           Complexity
         </h1>
