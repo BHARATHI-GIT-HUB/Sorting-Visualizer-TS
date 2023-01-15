@@ -61,7 +61,6 @@ const AlgoContext: React.FC<Props> = ({ children }) => {
       randdomNumbers.push(Math.floor(Math.random() * 540));
     }
     setItems(randdomNumbers);
-    console.log(items);
   }, [settings.arrLen, settings.isReset]);
 
   const sort = (algoType: Algo) => {

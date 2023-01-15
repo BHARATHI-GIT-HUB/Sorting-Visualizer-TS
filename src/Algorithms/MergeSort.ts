@@ -51,7 +51,7 @@ export const getMergeSortAnims = (
 export const mergeSort: AlgoCon = {
   title: "Merge Sort",
   description:
-    "Merge Sort is an efficient, stable sorting algorith that makes use of the divide and conquer strategy. Conceptually the algorithm works as follows: Divide the unsorted list into <em>n</em> sublists, each containing one element(a list of one element is considered sorted) Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list.",
+    "<p>Merge Sort is an efficient, stable sorting algorithm that makes use of the divide and conquer strategy. Conceptually the algorithm works as follows: Divide the unsorted list into <em>n</em> sublists, each containing one element(a list of one element is considered sorted)</p> <p>Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list.</p>",
   worstCase: "O(nlogn)",
   bestCase: "O(nlogn)",
   avgCase: "O(nlogn)",

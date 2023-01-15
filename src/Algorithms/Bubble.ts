@@ -18,7 +18,7 @@ export const getBubbleSort = (items: number[]) => {
 export const bubbleSort: AlgoCon = {
   title: "bubbleSort",
   description:
-    " bubbleis a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.The pass through the list is repeated until the list is sorted. The algorithm, which is a comparison sort, is named for the way smaller or larger elements bubble to the top of the list. Although the algorithm is simple, it is too slow and impractical for most problems ",
+    "<p> bubble is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.The pass through the list is repeated until the list is sorted.</p> <p> The algorithm, which is a comparison sort, is named for the way smaller or larger elements bubble to the top of the list. Although the algorithm is simple, it is too slow and impractical for most problems </p>",
   worstCase: "O(n<sup>2</sup>)",
   bestCase: "O(n<sup>2</sup>)",
   avgCase: "O(n)",

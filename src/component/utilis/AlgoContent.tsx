@@ -66,7 +66,7 @@ const AlgoContent: React.FC<Props> = ({ AlgoType }) => {
           Description
         </h1>
         <p
-          className="text-xl font-Inter font-normal max-w-4xl capitalize"
+          className="text-xl font-Inter font-normal flex flex-col  justify-center items-start gap-4 leading-7 max-w-4xl capitalize"
           dangerouslySetInnerHTML={{
             __html: AlgoContent.description,
           }}

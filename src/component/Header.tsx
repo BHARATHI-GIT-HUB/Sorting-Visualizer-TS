@@ -3,10 +3,11 @@ import React from "react";
 import { Algo, Context } from "./utilis/AlgoContext";
 
 const Header = () => {
+  const { sort, settings, setSettings } = useContext(Context);
+
   const [toggle, setToggle] = useState<boolean | null>(false);
   const [disable, setDisable] = useState<String | null>("");
   const ref = useRef<HTMLInputElement>(null);
-  const { sort, settings, setSettings } = useContext(Context);
 
   useEffect(() => {
     const checkIfClickedOutside = (e: any) => {
@@ -30,6 +31,7 @@ const Header = () => {
   const onArrayChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     if (!setSettings) return;
     setSettings((c) => ({ ...c, arrLen: +e.target.value }));
+
     if (settings.arrLen < 100) {
       setSettings((c) => ({ ...c, delay: +e.target.value / 10 }));
     } else {
@@ -46,6 +48,7 @@ const Header = () => {
     if (!setSettings) return;
     setSettings((c) => ({ ...c, isReset: !isReset }));
   };
+  const genericHamburgerLine = `h-[5px] w-8 my-1 rounded-sm bg-white transition ease transform duration-300`;
 
   return (
     <div ref={ref} className="overflow-hidden flex flex-col gap-4">
@@ -56,20 +59,25 @@ const Header = () => {
           }}
           className="py-3"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="#d17f3f"
-            className="w-8 h-8"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
-            />
-          </svg>
+          <div
+            className={`${genericHamburgerLine} ${
+              toggle
+                ? "rotate-45 translate-y-3 opacity-50 group-hover:opacity-100"
+                : "opacity-50 group-hover:opacity-100"
+            }`}
+          />
+          <div
+            className={`${genericHamburgerLine} ${
+              toggle ? "opacity-0" : "opacity-50 group-hover:opacity-100"
+            }`}
+          />
+          <div
+            className={`${genericHamburgerLine} ${
+              toggle
+                ? "-rotate-45 -translate-y-3 opacity-50 group-hover:opacity-100"
+                : "opacity-50 group-hover:opacity-100"
+            }`}
+          />
         </button>
         <h2 className="text-[#afafaf] text-5xl font-Jura">
           Sorting Visualizer
@@ -77,10 +85,13 @@ const Header = () => {
       </div>
       <section className="min-h-screen shadow-md absolute bg-black text-[#818181] mt-[4rem]">
         {toggle && (
-          <div className="relative flex flex-col justify-start items-start gap-2 w-[15rem] mt-5">
+          <div className="relative flex flex-col justify-start items-start gap-2 w-[22rem] mt-5">
+            <h1 className="py-4 pl-16 w-full text-start font-Jura font-semibold text-4xl text-[#d17f3f] ">
+              Algorithms
+            </h1>
             <button
               disabled={settings.algoType == disable ? true : false}
-              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-10 w-full text-start ${
+              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-16 w-full text-start  ${
                 settings.algoType == "bubble sort"
                   ? " !text-[#afafaf] bg-[#818181]"
                   : ""
@@ -94,7 +105,7 @@ const Header = () => {
             </button>
             <button
               disabled={settings.algoType == disable ? true : false}
-              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-10 w-full text-start ${
+              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-16 w-full text-start ${
                 settings.algoType == "insertion sort"
                   ? "!text-[#afafaf] bg-[#818181]"
                   : ""
@@ -109,7 +120,7 @@ const Header = () => {
 
             <button
               disabled={settings.algoType == disable ? true : false}
-              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-10 w-full text-start ${
+              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-16 w-full text-start ${
                 settings.algoType == "merge sort"
                   ? " !text-[#afafaf] bg-[#818181]"
                   : ""
@@ -123,7 +134,7 @@ const Header = () => {
             </button>
             <button
               disabled={settings.algoType == disable ? true : false}
-              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-10 w-full text-start ${
+              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-16 w-full text-start ${
                 settings.algoType == "quick sort"
                   ? " !text-[#afafaf] bg-[#818181]"
                   : ""
@@ -137,7 +148,7 @@ const Header = () => {
             </button>
             <button
               disabled={settings.algoType == disable ? true : false}
-              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-10 w-full text-start ${
+              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-16 w-full text-start ${
                 settings.algoType == "heap sort"
                   ? " !text-[#afafaf] bg-[#818181]"
                   : ""
