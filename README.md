@@ -28,7 +28,7 @@ Features
 - React with hooks
 - Typescript
 - TailWind css
-- 
+
 
 ### Features built using
 
