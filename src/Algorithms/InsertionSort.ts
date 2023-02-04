@@ -2,19 +2,19 @@ import { AlgoCon } from "../component/utilis/AlgoContent";
 import { swap } from "./helper";
 
 export const getInsertionSortAnims = (items: number[]) => {
-  const newArr = [...items];
-  const animeArr = [[1]];
+  const insertionSorted = [...items];
+  const insertionAnims = [[1]];
 
-  for (let i = 1; i < newArr.length; i++) {
+  for (let i = 1; i < insertionSorted.length; i++) {
     let j = i;
-    while (j > 0 && newArr[j] < newArr[j - 1]) {
-      animeArr.push([j - 1, j]);
-      swap(newArr, j, j - 1);
+    while (j > 0 && insertionSorted[j] < insertionSorted[j - 1]) {
+      insertionAnims.push([j - 1, j]);
+      swap(insertionSorted, j, j - 1);
       j--;
     }
   }
 
-  return { newArr, animeArr };
+  return { insertionSorted, insertionAnims };
 };
 
 export const insertionSort: AlgoCon = {

@@ -5,6 +5,7 @@ import { insertionSort } from "../../Algorithms/InsertionSort";
 import { heapSort } from "../../Algorithms/HeapSort";
 import { quickSort } from "../../Algorithms/QuickSort";
 import { mergeSort } from "../../Algorithms/MergeSort";
+// import { getSelectionSort } from "../../Algorithms/Selection";
 import { Algo } from "./AlgoContext";
 
 interface Props {
@@ -54,6 +55,10 @@ const AlgoContent: React.FC<Props> = ({ AlgoType }) => {
       case "quick sort":
         setAlgoContent(quickSort);
         break;
+      // case "selection sort":
+      //   setAlgoContent(quickSort);
+      //   break;
+
       default:
         break;
     }

@@ -5,6 +5,7 @@ import { getHeapSortAnims } from "../../Algorithms/HeapSort";
 import { getInsertionSortAnims } from "../../Algorithms/InsertionSort";
 import { getMergeSortAnims } from "../../Algorithms/MergeSort";
 import { getQuickSortAnims } from "../../Algorithms/QuickSort";
+import { getSelectionSort } from "../../Algorithms/Selection";
 import { AnimateDivs, animateMerge } from "./Animation";
 
 const initVals: Settings = {
@@ -18,6 +19,7 @@ export type Algo =
   | "Select Algorithm"
   | "bubble sort"
   | "insertion sort"
+  | "selection sort"
   | "merge sort"
   | "heap sort"
   | "quick sort";
@@ -68,16 +70,22 @@ const AlgoContext: React.FC<Props> = ({ children }) => {
       case "bubble sort":
         const { bubbleSorted, bubbleSortAnims } = getBubbleSort(items);
         AnimateDivs({
-          newArr: bubbleSorted,
-          arr: bubbleSortAnims,
+          sortedArr: bubbleSorted,
+          swapIndex: bubbleSortAnims,
           settings,
           setItems,
         });
         break;
 
       case "insertion sort":
-        const { newArr, animeArr } = getInsertionSortAnims(items);
-        AnimateDivs({ newArr, arr: animeArr, settings, setItems });
+        const { insertionSorted, insertionAnims } =
+          getInsertionSortAnims(items);
+        AnimateDivs({
+          sortedArr: insertionSorted,
+          swapIndex: insertionAnims,
+          settings,
+          setItems,
+        });
         break;
 
       case "merge sort":
@@ -85,14 +93,14 @@ const AlgoContext: React.FC<Props> = ({ children }) => {
         const arr: number[][] = [];
         const nums = [...items];
         getMergeSortAnims(nums, aux, arr, 0, items.length - 1);
-        animateMerge({ newArr: nums, arr, setItems, settings });
+        animateMerge({ sortedArr: nums, swapIndex: arr, setItems, settings });
         break;
 
       case "heap sort":
         const { heapSorted, heapSortAnims } = getHeapSortAnims(items);
         AnimateDivs({
-          newArr: heapSorted,
-          arr: heapSortAnims,
+          sortedArr: heapSorted,
+          swapIndex: heapSortAnims,
           setItems,
           settings,
         });
@@ -101,10 +109,21 @@ const AlgoContext: React.FC<Props> = ({ children }) => {
       case "quick sort":
         const { quickSorted, quickSortAnims } = getQuickSortAnims(items);
         AnimateDivs({
-          newArr: quickSorted,
-          arr: quickSortAnims,
+          sortedArr: quickSorted,
+          swapIndex: quickSortAnims,
           setItems,
           settings,
+        });
+        break;
+
+      case "selection sort":
+        const { selectionSorted, selectionSortAnims } = getSelectionSort(items);
+
+        AnimateDivs({
+          sortedArr: selectionSorted,
+          swapIndex: selectionSortAnims,
+          settings,
+          setItems,
         });
         break;
 

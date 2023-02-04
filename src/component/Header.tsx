@@ -103,6 +103,7 @@ const Header = () => {
             >
               Bubble Sort
             </button>
+
             <button
               disabled={settings.algoType == disable ? true : false}
               className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-16 w-full text-start ${
@@ -116,6 +117,21 @@ const Header = () => {
               }}
             >
               Insertion Sort
+            </button>
+
+            <button
+              disabled={settings.algoType == disable ? true : false}
+              className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-16 w-full text-start ${
+                settings.algoType == "insertion sort"
+                  ? "!text-[#afafaf] bg-[#818181]"
+                  : ""
+              }`}
+              onClick={() => {
+                onAlgoChange("selection sort");
+                setToggle(false);
+              }}
+            >
+              Selection Sort
             </button>
 
             <button
