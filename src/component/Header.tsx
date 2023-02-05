@@ -148,7 +148,7 @@ const Header = () => {
             >
               Merge Sort
             </button>
-            <button
+            {/* <button
               disabled={settings.algoType == disable ? true : false}
               className={`cursor-pointer text-2xl font-semibold text-[#818181] hover:text-[#afafaf] hover:bg-[#818181] py-2 pl-16 w-full text-start ${
                 settings.algoType == "quick sort"
@@ -175,7 +175,7 @@ const Header = () => {
               }}
             >
               Heap Sort
-            </button>
+            </button> */}
           </div>
         )}
       </section>
